@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Signer</title>
+</head>
+<body>
+    <h1>{{ signer.name }}</h1>
+    <p><strong>Email:</strong> {{ signer.email }}</p>
+    <p><strong>Data de Criação:</strong> {{ signer.created_at }}</p>
+    <p><strong>Última Atualização:</strong> {{ signer.updated_at }}</p>
+
+    <a href="{% url 'signer-edit' signer.pk %}">Editar</a> |
+    <a href="{% url 'signer-delete' signer.pk %}">Excluir</a> |
+    <a href="{% url 'signer-list' %}">Voltar para a lista</a>
+</body>
+</html>

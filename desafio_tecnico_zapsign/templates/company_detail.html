@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Empresa</title>
+</head>
+<body>
+    <h1>{{ company.name }}</h1>
+    <p><strong>API Token:</strong> {{ company.api_token }}</p>
+    <p><strong>Criado em:</strong> {{ company.created_at }}</p>
+    <p><strong>Atualizado em:</strong> {{ company.updated_at }}</p>
+
+    <a href="{% url 'company-edit' company.pk %}">Editar</a> |
+    <a href="{% url 'company-delete' company.pk %}">Excluir</a> |
+    <a href="{% url 'company-list' %}">Voltar para a lista</a>
+</body>
+</html>

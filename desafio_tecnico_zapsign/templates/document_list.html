@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentos</title>
+</head>
+<body>
+    <h1>Lista de Documentos</h1>
+    <a href="{% url 'document-create' %}">Criar Novo Documento</a>
+    <ul>
+        {% for document in documents %}
+            <li>
+                <a href="{% url 'document-detail' document.pk %}">{{ document.name }}</a> |
+                <a href="{% url 'document-edit' document.pk %}">Editar</a> |
+                <a href="{% url 'document-delete' document.pk %}">Excluir</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

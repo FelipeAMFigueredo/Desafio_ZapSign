@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signers</title>
+</head>
+<body>
+    <h1>Lista de Signers</h1>
+    <a href="{% url 'signer-create' %}">Criar Novo Signer</a>
+    <ul>
+        {% for signer in signers %}
+            <li>
+                <a href="{% url 'signer-detail' signer.pk %}">{{ signer.name }}</a> |
+                <a href="{% url 'signer-edit' signer.pk %}">Editar</a> |
+                <a href="{% url 'signer-delete' signer.pk %}">Excluir</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Documento</title>
+</head>
+<body>
+    <h1>{{ document.name }}</h1>
+    <p><strong>Open ID:</strong> {{ document.open_id }}</p>
+    <p><strong>Status:</strong> {{ document.status }}</p>
+    <p><strong>Criado por:</strong> {{ document.created_by }}</p>
+    <p><strong>Data de Criação:</strong> {{ document.created_at }}</p>
+
+    <a href="{% url 'document-edit' document.pk %}">Editar</a> |
+    <a href="{% url 'document-delete' document.pk %}">Excluir</a> |
+    <a href="{% url 'document-list' %}">Voltar para a lista</a>
+</body>
+</html>

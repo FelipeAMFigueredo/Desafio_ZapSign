@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresas</title>
+</head>
+<body>
+    <h1>Lista de Empresas</h1>
+    <a href="{% url 'company-create' %}">Criar Nova Empresa</a>
+    <ul>
+        {% for company in companies %}
+            <li>
+                <a href="{% url 'company-detail' company.pk %}">{{ company.name }}</a> |
+                <a href="{% url 'company-edit' company.pk %}">Editar</a> |
+                <a href="{% url 'company-delete' company.pk %}">Excluir</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

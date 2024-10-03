@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if company %}Editar{% else %}Criar{% endif %} Empresa</title>
+</head>
+<body>
+    <h1>{% if company %}Editar{% else %}Criar{% endif %} Empresa</h1>
+    
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Salvar</button>
+    </form>
+    
+    <a href="{% url 'company-list' %}">Voltar para a lista</a>
+</body>
+</html>
